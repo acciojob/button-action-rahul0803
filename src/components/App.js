@@ -1,19 +1,22 @@
-import React, {Component, useState} from "react";
+import React, { Component, useState } from "react";
 import "./../styles/App.css";
 
 function App() {
-  const handleClick = () => {
-  document.getElementById("para").style.display = "block";
-  }
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div id="main">
+    <div id="main" className="bg-pink">
+      {isClicked && (
+        <p>
+          <h1>This is a paragraph</h1>
+        </p>
+      )}
+      <button id="button" onClick={handleClick}>
+        Click me
+      </button>
       // Do not alter the main div
-      <p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
-      <button id="click" onClick={handleClick}>Click me</button>
     </div>
   );
 }
-
 
 export default App;
